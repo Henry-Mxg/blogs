@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>anTV-x6实现画布流程图 | 一大口麻辣拌的博客</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="总要尝遍所有的路，再对生活充满期待">
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.27b443b7.css" as="style"><link rel="preload" href="/blogs/assets/js/app.906672bb.js" as="script"><link rel="preload" href="/blogs/assets/js/3.7b24e10b.js" as="script"><link rel="preload" href="/blogs/assets/js/1.8b97a1ee.js" as="script"><link rel="preload" href="/blogs/assets/js/12.61d899db.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.8b3e8273.js"><link rel="prefetch" href="/blogs/assets/js/11.d6fb598b.js"><link rel="prefetch" href="/blogs/assets/js/13.2c49561c.js"><link rel="prefetch" href="/blogs/assets/js/14.9bd63447.js"><link rel="prefetch" href="/blogs/assets/js/15.53e906c2.js"><link rel="prefetch" href="/blogs/assets/js/16.6b5f949c.js"><link rel="prefetch" href="/blogs/assets/js/17.2b769064.js"><link rel="prefetch" href="/blogs/assets/js/18.53dbe7f0.js"><link rel="prefetch" href="/blogs/assets/js/19.cb0945fd.js"><link rel="prefetch" href="/blogs/assets/js/20.2bb9787f.js"><link rel="prefetch" href="/blogs/assets/js/4.f315bc31.js"><link rel="prefetch" href="/blogs/assets/js/5.ff90a326.js"><link rel="prefetch" href="/blogs/assets/js/6.cf3a30f3.js"><link rel="prefetch" href="/blogs/assets/js/7.3512f90a.js"><link rel="prefetch" href="/blogs/assets/js/8.e8f03139.js"><link rel="prefetch" href="/blogs/assets/js/9.f9cd7c8d.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.27b443b7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>一大口麻辣拌的博客</h3> <p class="description" data-v-59e6cb88>总要尝遍所有的路，再对生活充满期待</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2023
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="/blogs/Icon.jpeg" alt="一大口麻辣拌的博客" class="logo"> <span class="site-name">一大口麻辣拌的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/categories/微前端/" class="nav-link"><i class="undefined"></i>
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/categories/随笔记/" class="nav-link"><i class="undefined"></i>
+  随笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      一大口麻辣拌 的博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/2476540635913351" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Henry-Mxg/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/blogs/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/blogs/Icon.jpeg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>9</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>8</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/categories/微前端/" class="nav-link"><i class="undefined"></i>
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/categories/随笔记/" class="nav-link"><i class="undefined"></i>
+  随笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      一大口麻辣拌 的博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/2476540635913351" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Henry-Mxg/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/blogs/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>anTV-x6实现画布流程图</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2023
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">anTV-x6实现画布流程图</h1> <div data-v-8a445198><!----> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>6/10/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>前端</span><span class="tag-item" data-v-8a445198>详记</span></i></div></div> <div class="theme-reco-content content__default"><img src="/blogs/assets/img/x6-img.76fbdd6a.png" style="width:1000px;"> <h2 id="project-setup"><a href="#project-setup" class="header-anchor">#</a> Project setup</h2> <div class="language- extra-class"><pre class="language-text"><code>npm install
+</code></pre></div><h3 id="compiles-and-hot-reloads-for-development"><a href="#compiles-and-hot-reloads-for-development" class="header-anchor">#</a> Compiles and hot-reloads for development</h3> <div class="language- extra-class"><pre class="language-text"><code>npm run serve
+</code></pre></div><h1 id="vue-项目中使用-antv-x6-绘制流程图"><a href="#vue-项目中使用-antv-x6-绘制流程图" class="header-anchor">#</a> Vue 项目中使用 AntV X6 绘制流程图</h1> <h2 id="一、需求"><a href="#一、需求" class="header-anchor">#</a> 一、需求</h2> <ul><li>在<code>Vue2.x</code>（<code>Vue3.x</code>项目同理）项目中使用<code>AntV X6</code>组件库绘制流程图，需要实现以下需求：</li> <li>需求 1：左侧菜单中的模块可以拖拽进入画布中生成对应的流程图模块</li> <li>需求 2：流程图中的节点之间连接桩可以进行连线交互</li> <li>需求 3：点击对应的节点后可以进行操作节点（删除、查看节点的相关信息参数）</li> <li>需求 4：鼠标悬浮在连线上时可以删除当前连线</li> <li>隐含需求：节点样式需要满足<code>UI</code>设计，所以需要自定义节点样式</li> <li>关于<code>AntV X6</code>是什么组件库，可以看<a href="https://antv-x6.gitee.io/zh/docs/tutorial/about" target="_blank" rel="noopener noreferrer">X6 简介<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="二、解决"><a href="#二、解决" class="header-anchor">#</a> 二、解决</h2> <ul><li>首先分析需求，通过<code>AntV X6</code>组件给出的文档和<code>API</code>是可以满足以上需求的，以下以<code>Vue2.x</code>项目中使用<code>AntV X6</code>并满足相应需求为例，讲述<code>AntV X6</code>使用，帮助初学者快速上手，后文中使用<code>x6</code>代替<code>AntV X6</code>：</li></ul> <h3 id="_1-安装x6组件库"><a href="#_1-安装x6组件库" class="header-anchor">#</a> 1.安装<code>X6</code>组件库</h3> <ul><li>搭建<code>Vue</code>的项目后就可以安装<code>x6</code>了，执行命令<code>npm install @antv/x6 --save</code>，详见文档<a href="https://antv-x6.gitee.io/zh/docs/tutorial/getting-started" target="_blank" rel="noopener noreferrer">X6 快速上手<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="_2-使用x6组件库"><a href="#_2-使用x6组件库" class="header-anchor">#</a> 2.使用<code>x6</code>组件库</h3> <ul><li><p>安装好<code>x6</code>之后就可以直接使用了，找到需要使用<code>x6</code>的界面中引入<code>Graph</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Graph <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@antv/x6&quot;</span><span class="token punctuation">;</span>
+</code></pre></div></li> <li><p>在需要的页面中引入后即可开始初始化画布，初始化画布函数代码如下：</p> <div class="language-html extra-class"><pre class="language-html"><code>HomeView.vue ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+...
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">import</span> <span class="token punctuation">{</span> Graph <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@antv/x6'</span>
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+      <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token punctuation">{</span>
+              <span class="token operator">...</span>
+              <span class="token literal-property property">graph</span><span class="token operator">:</span> <span class="token keyword">null</span> <span class="token comment">// 画布实例对象</span>
+              <span class="token operator">...</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initGraph</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 初始化流程图画布</span>
+          <span class="token function">initGraph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">let</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">)</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span>graph <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Graph</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                  <span class="token literal-property property">container</span><span class="token operator">:</span> container<span class="token punctuation">,</span> <span class="token comment">// 画布容器</span>
+                  <span class="token literal-property property">width</span><span class="token operator">:</span> container<span class="token punctuation">.</span>offsetWidth<span class="token punctuation">,</span> <span class="token comment">// 画布宽</span>
+                  <span class="token literal-property property">height</span><span class="token operator">:</span> container<span class="token punctuation">.</span>offsetHeight<span class="token punctuation">,</span> <span class="token comment">// 画布高</span>
+                  <span class="token literal-property property">background</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 背景（透明）</span>
+                  <span class="token literal-property property">snapline</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 对齐线</span>
+                  <span class="token comment">// 配置连线规则</span>
+                  <span class="token literal-property property">connecting</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                      <span class="token literal-property property">snap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 自动吸附</span>
+                      <span class="token literal-property property">allowBlank</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//是否允许连接到画布空白位置的点</span>
+                      <span class="token literal-property property">allowMulti</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//是否允许在相同的起始节点和终止之间创建多条边</span>
+                      <span class="token literal-property property">allowLoop</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//是否允许创建循环连线，即边的起始节点和终止节点为同一节点</span>
+                      <span class="token literal-property property">highlight</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//拖动边时，是否高亮显示所有可用的节点</span>
+                      <span class="token function">validateEdge</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> edge<span class="token punctuation">,</span> type<span class="token punctuation">,</span> previous <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                          <span class="token comment">// 连线时设置折线</span>
+                          edge<span class="token punctuation">.</span><span class="token function">setRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                              <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'er'</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                          <span class="token comment">// 设置连线样式</span>
+                          edge<span class="token punctuation">.</span><span class="token function">setAttrs</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                              <span class="token literal-property property">line</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                                  <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#275da3'</span><span class="token punctuation">,</span>
+                                  <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                                  <span class="token literal-property property">strokeDasharray</span><span class="token operator">:</span> <span class="token string">'5'</span><span class="token punctuation">,</span> <span class="token comment">// 设置为虚线</span>
+                                  <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                                    <span class="token literal-property property">animation</span><span class="token operator">:</span> <span class="token string">'dash 2s linear infinite'</span> <span class="token comment">// 应用动画效果</span>
+                                  <span class="token punctuation">}</span>
+                              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                          <span class="token keyword">return</span> <span class="token boolean">true</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">panning</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 画布是否可以拖拽平移，默认禁用</span>
+                      <span class="token literal-property property">enabled</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">mousewheel</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                      <span class="token literal-property property">enabled</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 支持滚动放大缩小</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">grid</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 项目中我没设置这个  在这个设置只是为了演示</span>
+                      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'mesh'</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">size</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>      <span class="token comment">// 网格大小 10px</span>
+                      <span class="token literal-property property">visible</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 渲染网格背景</span>
+                      <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                          <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#eeeeee'</span><span class="token punctuation">,</span> <span class="token comment">// 网格线/点颜色</span>
+                          <span class="token literal-property property">thickness</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>     <span class="token comment">// 网格线宽度/网格点大小</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p>其中初始化画布时，画布中的部分属性在注释中给出，如果想要深入了解，建议在官方文档中根据对应案例进行学习了解</p></li></ul> <h4 id="_1-满足需求-1"><a href="#_1-满足需求-1" class="header-anchor">#</a> （1）满足需求 1</h4> <ul><li><p>满足左侧菜单栏的拖拽效果可以利用<code>x6</code>的<code>stencil</code>初始化一个左侧菜单栏，这样菜单栏内部的模块就可以进行拖动了；但是为了较高的自定义样式这里舍弃使用这种方式，而是利用<code>H5</code>的<code>draggable</code>属性，帮助我们间接完成拖拽模块的功能，这里只举例出几个模块作为演示和学习，菜单栏代码如下：</p> <div class="language-html extra-class"><pre class="language-html"><code>HomeView.vue ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>menu-list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+    <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">display</span><span class="token punctuation">:</span> flex</span><span class="token punctuation">&quot;</span></span></span>
+    <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item in moduleList<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.id<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">draggable</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@dragend</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>handleDragEnd($event, item)<span class="token punctuation">&quot;</span></span>
+  <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span>#e9f1fe<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span> 0 10px<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">margin</span><span class="token punctuation">:</span> 10px 3px 0 0<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span> #1890fe<span class="token punctuation">;</span><span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>el-icon-s-order<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{item.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@dragover</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dragoverDiv<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+...
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">moduleList</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'开始模块'</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'initial'</span> <span class="token comment">// 初始模块(用于区分样式)</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'结束模块'</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'initial'</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'逻辑模块1'</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'logic'</span> <span class="token comment">// 逻辑模块(用于区分样式)</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'逻辑模块2'</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'logic'</span>
+              <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span> <span class="token comment">// 列表可拖动模块</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods <span class="token punctuation">{</span>
+      <span class="token comment">// 拖动后松开鼠标触发事件</span>
+      <span class="token function">handleDragEnd</span><span class="token punctuation">(</span><span class="token parameter">e<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> item<span class="token punctuation">)</span> <span class="token comment">// 可以获取到最后拖动后松开鼠标时的坐标和拖动的节点相关信息</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// 拖动节点到画布中鼠标样式变为可拖动状态</span>
+      <span class="token function">dragoverDiv</span><span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          ev<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token operator">...</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li></ul> <h4 id="_2-满足需求-2"><a href="#_2-满足需求-2" class="header-anchor">#</a> （2）满足需求 2</h4> <ul><li>到目前为止已经完成了模块的拖动部分，接下来需要拖动到画布中生成相应的模块，这里需要满足隐含的需求，自定义每个模块生成节点的样式，利用<code>x6</code>中<a href="https://x6.antv.vision/zh/docs/tutorial/advanced/react" target="_blank" rel="noopener noreferrer">高级指引-使用 HTML/React/Vue/Angular 渲染 <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>出需要的节点样式，笔者在这里手写了一个工具类的函数，帮助我们生成相应的节点，需求 2 中的节点之间可以连线也在生成节点中加上可以连线的属性，这里我们使用连线桩进行连线，详细可以阅读官方文档深入学习<a href="https://x6.antv.vision/zh/docs/tutorial/basic/group" target="_blank" rel="noopener noreferrer">群组 Group<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>和<a href="https://x6.antv.vision/zh/docs/tutorial/basic/port" target="_blank" rel="noopener noreferrer">连接桩 Port<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>的使用方法<div class="language-javascript extra-class"><pre class="language-javascript"><code>graphTools<span class="token punctuation">.</span>js<span class="token punctuation">;</span>
+<span class="token comment">/* 
+antv x6图谱相关工具函数
+*/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* 
+  初始化初始节点(开始,结束节点)
+  x:x轴坐标
+  y:y轴坐标
+  id:开始节点id
+  name:节点内容，默认为空
+  type:节点类型，默认为空
+  */</span>
+<span class="token function">initInitialNode</span> <span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 提取出复用</span>
+  <span class="token keyword">const</span> objY <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">shape</span><span class="token operator">:</span> <span class="token string">'html'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> type<span class="token punctuation">,</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> id<span class="token punctuation">,</span> <span class="token comment">// String，可选，节点的唯一标识</span>
+    <span class="token literal-property property">x</span><span class="token operator">:</span> x<span class="token punctuation">,</span> <span class="token comment">// Number，必选，节点位置的 x 值</span>
+    <span class="token literal-property property">y</span><span class="token operator">:</span> y<span class="token punctuation">,</span> <span class="token comment">// Number，必选，节点位置的 y 值</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">140</span><span class="token punctuation">,</span> <span class="token comment">// Number，可选，节点大小的 width 值</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token comment">// Number，可选，节点大小的 height 值</span>
+    <span class="token literal-property property">html</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+          &lt;div class=&quot;custom_node_initial&quot;&gt;
+            &lt;div&gt;
+             &lt;div style=&quot;background-color: #e9f1fe;height: 100%;&quot;&gt;
+              &lt;i style=&quot;color: #1890fe;padding: 6px 0 0 3px;&quot; class=&quot;el-icon-s-order&quot;&gt;&lt;/i&gt;
+              &lt;/div&gt;
+              &lt;p style=&quot;color: #000&quot; title=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name <span class="token operator">||</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 这里给生成的节点的body加上透明的边框,一定要给边框宽度加上&gt;0的值,否则节点将不能连线</span>
+      <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'transparent'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 边框的粗细</span>
+        <span class="token literal-property property">magnet</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">// 节点是否可以连线</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">ports</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">groups</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 在下面的items中复用</span>
+        <span class="token literal-property property">group1</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">circle</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">r</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token comment">// 圆的半径</span>
+              <span class="token literal-property property">magnet</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 吸附功能</span>
+              <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#ccc'</span><span class="token punctuation">,</span> <span class="token comment">// 边的颜色</span>
+              <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 边的宽度</span>
+              <span class="token literal-property property">fill</span><span class="token operator">:</span> <span class="token string">'#fff'</span> <span class="token comment">// 连接桩填充颜色\</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">position</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">name</span><span class="token operator">:</span> id <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">'bottom'</span> <span class="token operator">:</span> <span class="token string">'top'</span><span class="token punctuation">,</span> <span class="token comment">// 连接桩的位置</span>
+            <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">items</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'group1'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">group</span><span class="token operator">:</span> <span class="token string">'group1'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'group2'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">group</span><span class="token operator">:</span> <span class="token string">'group1'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> node <span class="token operator">=</span> objY
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> node <span class="token operator">=</span> objY
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">/* 
+  初始化逻辑节点
+  x:x轴坐标
+  y:y轴坐标
+  id:开始节点id
+  name:节点内容，默认为空
+  type:节点类型，默认为空
+  */</span>
+ <span class="token function">initLogicNode</span> <span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 提取出来复用</span>
+  <span class="token keyword">const</span> objZ <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">shape</span><span class="token operator">:</span> <span class="token string">'html'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> type<span class="token punctuation">,</span> <span class="token comment">// 动作所属类型</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> id<span class="token punctuation">,</span> <span class="token comment">// String，可选，节点的唯一标识</span>
+    <span class="token literal-property property">x</span><span class="token operator">:</span> x<span class="token punctuation">,</span> <span class="token comment">// Number，必选，节点位置的 x 值</span>
+    <span class="token literal-property property">y</span><span class="token operator">:</span> y<span class="token punctuation">,</span> <span class="token comment">// Number，必选，节点位置的 y 值</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">140</span><span class="token punctuation">,</span> <span class="token comment">// Number，可选，节点大小的 width 值</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token comment">// Number，可选，节点大小的 height 值</span>
+    <span class="token literal-property property">html</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;div class=&quot;custom_node_logic&quot;&gt;
+              &lt;div&gt;
+                &lt;div style=&quot;background-color: #e9f1fe;height: 100%;&quot;&gt;
+                  &lt;i style=&quot;color: #1890fe;padding: 6px 0 0 3px;&quot; class=&quot;el-icon-s-order&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;p style=&quot;color: #000&quot; title=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name <span class="token operator">||</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'transparent'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">magnet</span><span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">ports</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">groups</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">group1</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">circle</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">r</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token comment">// 圆的半径</span>
+              <span class="token literal-property property">magnet</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 吸附功能</span>
+              <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#ccc'</span><span class="token punctuation">,</span> <span class="token comment">// 边的颜色</span>
+              <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 边的宽度</span>
+              <span class="token literal-property property">fill</span><span class="token operator">:</span> <span class="token string">'#fff'</span> <span class="token comment">// 连接桩填充颜色\</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">position</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">name</span><span class="token operator">:</span> id <span class="token operator">===</span> <span class="token number">3</span> <span class="token operator">?</span> <span class="token string">'top'</span> <span class="token operator">:</span> <span class="token string">'bottom'</span><span class="token punctuation">,</span> <span class="token comment">// 连接桩出现的位置</span>
+            <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">group2</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">circle</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">r</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token comment">// 圆的半径</span>
+              <span class="token literal-property property">magnet</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 吸附功能</span>
+              <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#ccc'</span><span class="token punctuation">,</span> <span class="token comment">// 边的颜色</span>
+              <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 边的宽度</span>
+              <span class="token literal-property property">fill</span><span class="token operator">:</span> <span class="token string">'#fff'</span> <span class="token comment">// 连接桩填充颜色\</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">position</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">name</span><span class="token operator">:</span> id <span class="token operator">===</span> <span class="token number">3</span> <span class="token operator">?</span> <span class="token string">'bottom'</span> <span class="token operator">:</span> <span class="token string">'top'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">items</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'group1'</span><span class="token punctuation">,</span> <span class="token comment">// 唯一id</span>
+          <span class="token literal-property property">group</span><span class="token operator">:</span> <span class="token string">'group1'</span> <span class="token comment">// 使用的是哪一个连接桩</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'group2'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">group</span><span class="token operator">:</span> <span class="token string">'group2'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> node <span class="token operator">=</span> objZ
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> node <span class="token operator">=</span> objZ
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></li></ul> <h4 id="_3-满足隐含需求"><a href="#_3-满足隐含需求" class="header-anchor">#</a> （3）满足隐含需求</h4> <ul><li><p>在页面组件中引入工具函数，并添加一个节点生成函数，将模块的参数传入节点生成函数中，生成相应的节点，代码如下：</p> <div class="language-html extra-class"><pre class="language-html"><code>HomeView.vue ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token operator">...</span>
+  <span class="token keyword">import</span> Tools <span class="token keyword">from</span> <span class="token string">'@/assets/js/graphTools.js'</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">//</span>
+          <span class="token function">addHandleNode</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              type <span class="token operator">===</span> <span class="token string">'initial'</span>
+                  <span class="token operator">?</span>
+                  <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span><span class="token function">addNode</span><span class="token punctuation">(</span>Tools<span class="token punctuation">.</span><span class="token function">initInitialNode</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 添加节点</span>
+                  <span class="token operator">:</span>
+                  <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span><span class="token function">addNode</span><span class="token punctuation">(</span>Tools<span class="token punctuation">.</span><span class="token function">initLogicNode</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment">// 拖动后松开鼠标触发事件</span>
+          <span class="token function">handleDragEnd</span><span class="token punctuation">(</span><span class="token parameter">e<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addHandleNode</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>pageX <span class="token operator">-</span> <span class="token number">240</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>pageY <span class="token operator">-</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> item<span class="token punctuation">.</span>name<span class="token punctuation">,</span> item<span class="token punctuation">.</span>type<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>less<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token atrule"><span class="token rule">@keyframes</span> dash</span> <span class="token punctuation">{</span>
+<span class="token selector">to</span> <span class="token punctuation">{</span>
+  <span class="token property">stroke-dashoffset</span><span class="token punctuation">:</span> -100
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token selector">// 其中节点样式加到没有scoped包裹的style标签中，否则样式不生效
+  // 初始节点样式
+  .custom_node_initial</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>22<span class="token punctuation">,</span> 184<span class="token punctuation">,</span> 169<span class="token punctuation">,</span> 0.6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token selector">&gt; div</span> <span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+      <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+      <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+      <span class="token selector">i</span> <span class="token punctuation">{</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #ffffff<span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+        <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token property">margin-right</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+        <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">p</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #ffffff<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+        <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+        <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
+        <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">// 逻辑节点样式
+  .custom_node_logic</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>47<span class="token punctuation">,</span> 128<span class="token punctuation">,</span> 235<span class="token punctuation">,</span> 0.5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token selector">&gt; div</span> <span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+      <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+      <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+      <span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+      <span class="token property">line-height</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+      <span class="token selector">i</span> <span class="token punctuation">{</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #b5cde9<span class="token punctuation">;</span>
+        <span class="token property">margin-right</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+        <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">p</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #ffffff<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+        <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+        <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
+        <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li></ul> <h4 id="_4-满足需求-3-和-4"><a href="#_4-满足需求-3-和-4" class="header-anchor">#</a> （4）满足需求 3 和 4</h4> <ul><li><p>这里需要利用<code>x6</code>提供的方法，给节点绑定相应的事件，代码如下：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+      <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span><span class="token punctuation">{</span>
+              <span class="token operator">...</span>
+              <span class="token literal-property property">curSelectNode</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// 当前选中的节点和节点相关信息</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token function">initGraph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token operator">...</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">nodeAddEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+          <span class="token comment">// 节点绑定事件</span>
+          <span class="token function">nodeAddEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 节点绑定点击事件</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'node:click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> e<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> node<span class="token punctuation">,</span> view <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token comment">// 判断是否有选中过节点</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>curSelectNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 移除选中状态</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>curSelectNode<span class="token punctuation">.</span><span class="token function">removeTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token comment">// 判断两次选中节点是否相同</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>curSelectNode <span class="token operator">!==</span> node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  node<span class="token punctuation">.</span><span class="token function">addTools</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+                    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'boundary'</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                      <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token literal-property property">fill</span><span class="token operator">:</span> <span class="token string">'#16B8AA'</span><span class="token punctuation">,</span>
+                        <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#2F80EB'</span><span class="token punctuation">,</span>
+                        <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token literal-property property">fillOpacity</span><span class="token operator">:</span> <span class="token number">0.1</span>
+                      <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'button-remove'</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                      <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token string">'100%'</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">offset</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                        <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span>
+                      <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                  <span class="token keyword">this</span><span class="token punctuation">.</span>curSelectNode <span class="token operator">=</span> node
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                  <span class="token keyword">this</span><span class="token punctuation">.</span>curSelectNode <span class="token operator">=</span> <span class="token keyword">null</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>curSelectNode <span class="token operator">=</span> node
+                node<span class="token punctuation">.</span><span class="token function">addTools</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+                  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'boundary'</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                      <span class="token literal-property property">fill</span><span class="token operator">:</span> <span class="token string">'#16B8AA'</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#2F80EB'</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">strokeWidth</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">fillOpacity</span><span class="token operator">:</span> <span class="token number">0.1</span>
+                    <span class="token punctuation">}</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'button-remove'</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token string">'100%'</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">offset</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                      <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span>
+                    <span class="token punctuation">}</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token comment">// 连线绑定悬浮事件</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'cell:mouseenter'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> cell <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>cell<span class="token punctuation">.</span>shape <span class="token operator">==</span> <span class="token string">'edge'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cell<span class="token punctuation">.</span><span class="token function">addTools</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'button-remove'</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                      <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token string">'100%'</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                      <span class="token literal-property property">offset</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                        <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                cell<span class="token punctuation">.</span><span class="token function">setAttrs</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                  <span class="token literal-property property">line</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#409EFF'</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                cell<span class="token punctuation">.</span>zIndex <span class="token operator">=</span> <span class="token number">99</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'cell:mouseleave'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> cell <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>cell<span class="token punctuation">.</span>shape <span class="token operator">===</span> <span class="token string">'edge'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cell<span class="token punctuation">.</span><span class="token function">removeTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                cell<span class="token punctuation">.</span><span class="token function">setAttrs</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                  <span class="token literal-property property">line</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">stroke</span><span class="token operator">:</span> <span class="token string">'#275da3'</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                cell<span class="token punctuation">.</span>zIndex <span class="token operator">=</span> <span class="token number">1</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p>节点相关信息全部都储存在变量<code>curSelectNode</code>中，一般用到的属性值都在<code>store-&gt;data</code>中，自定义的属性也在这个里面（如笔者自定义的<code>type</code>）</p></li></ul> <h3 id="_3-成果展示"><a href="#_3-成果展示" class="header-anchor">#</a> 3.成果展示</h3> <p><img src="/blogs/assets/img/x6-img.76fbdd6a.png" controls="controls"></p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:0;" data-v-b57cc07c data-v-7dd95ae2></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="Sakura" data-v-248d85d6><canvas id="canvas_sakura" style="z-index:-1;" data-v-248d85d6></canvas></div><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/blogs/assets/js/app.906672bb.js" defer></script><script src="/blogs/assets/js/3.7b24e10b.js" defer></script><script src="/blogs/assets/js/1.8b97a1ee.js" defer></script><script src="/blogs/assets/js/12.61d899db.js" defer></script>
+  </body>
+</html>
